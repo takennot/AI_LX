@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SteeringAgent : MonoBehaviour
+namespace L3
+{
+    public class SteeringAgent : MonoBehaviour
 {
     [Header("Movement")] 
     public float maxSpeed = 5f;
@@ -159,4 +161,6 @@ public class SteeringAgent : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawLine(transform.position, transform.position + velocity);
     }
+}
+
 }

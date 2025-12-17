@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52fb4330a9861141bc8b2b6de4136eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridManager
-  width: 10
-  height: 10
+  width: 20
+  height: 20
   cellSize: 1
   tilePrefab: {fileID: 3171514563010778050, guid: 13f29df3f35760c47a9b49aab4ba0c34, type: 3}
   walkableMaterial: {fileID: 2100000, guid: 8a860e053f080df4ab976ae99def53f7, type: 2}

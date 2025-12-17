@@ -16,7 +16,6 @@ namespace L4
     [Header("Line of Sight")]
     [SerializeField] private Transform eyes;
     [SerializeField] private LayerMask occlusionMask = ~0;
-    //[SerializeField] private LayerMask occlusionMask;
 
     private Transform cachedTarget;
     
@@ -74,11 +73,6 @@ namespace L4
         hasLineofSight = true;
         Debug.DrawRay(eyePos, toTargetDir * dist, hasLineofSight ? Color.green : Color.red);
         return true;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
 }

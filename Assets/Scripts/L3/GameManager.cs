@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// not moving this to namespace L3 since its used by L3, L4 & L5
 public class GameManager : MonoBehaviour
 {
     public List<GameObject> obstacles;

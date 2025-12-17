@@ -3665,6 +3665,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1096771697}
     - target: {fileID: 9144611872166160753, guid: 485402897afaa284a9787c8a00089628, type: 3}
+      propertyPath: loseRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144611872166160753, guid: 485402897afaa284a9787c8a00089628, type: 3}
+      propertyPath: chaseRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144611872166160753, guid: 485402897afaa284a9787c8a00089628, type: 3}
       propertyPath: 'waypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 572832185}
