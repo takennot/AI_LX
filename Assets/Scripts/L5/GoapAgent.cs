@@ -179,5 +179,51 @@ namespace L5
             _ownedFactsBits &= ~a.delMask;
             _ownedFactsBits |= a.addMask;
         }
+        
+        public string GetDebugString()
+        {
+            var s = BuildCurrentState();
+            var sb = new System.Text.StringBuilder();
+            sb.AppendLine($"Goal: {GoalMaskToString(SelectGoalMask(s))}");
+            sb.AppendLine($"Current Action: {(_currentAction != null ? _currentAction.actionName : "(none)")}");
+            sb.AppendLine("Facts:");
+            foreach (GoapFact f in System.Enum.GetValues(typeof(GoapFact)))
+            {
+                sb.AppendLine($"- {f}: {(s.Has(f) ? "true" : "false")}");
+            }
+            sb.AppendLine("Plan:");
+            if (_plan == null || _plan.Count == 0)
+            {
+                sb.AppendLine("- (none)");
+            }
+            else
+            {
+                foreach (var a in _plan)
+                {
+                    sb.AppendLine($"- {a.actionName}");
+                }
+            }
+            return sb.ToString();
+        }
+        private string GoalMaskToString(ulong goalMask)
+        {
+            var sb = new StringBuilder();
+            bool first = true;
+            foreach (GoapFact f in Enum.GetValues(typeof(GoapFact)))
+            {
+                ulong bit = 1UL << (int)f;
+                if ((goalMask & bit) != 0)
+                {
+                    if (!first)
+                    {
+                        sb.Append(", ");
+                    }
+                    sb.Append(f);
+                    first = false;
+                }
+            }
+            return first ? "(none)" : sb.ToString();
+        }
+
     }
 }
